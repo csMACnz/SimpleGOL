@@ -19,12 +19,12 @@ namespace SimpleGOL
             //world[5, 6] = true;
 
             /* Toad */
-            world[5, 4] = true;
-            world[5, 5] = true;
-            world[5, 6] = true;
-            world[6, 3] = true;
-            world[6, 4] = true;
-            world[6, 5] = true;
+            //world[5, 4] = true;
+            //world[5, 5] = true;
+            //world[5, 6] = true;
+            //world[6, 3] = true;
+            //world[6, 4] = true;
+            //world[6, 5] = true;
 
             /* Beacon */
             //world[3, 3] = true;
@@ -33,6 +33,16 @@ namespace SimpleGOL
             //world[5, 6] = true;
             //world[6, 5] = true;
             //world[6, 6] = true;
+
+            /* Random */
+            var random = new Random((int)DateTime.Now.Ticks % int.MaxValue);
+            foreach (int row in Enumerable.Range(0, Height))
+            {
+                foreach (int col in Enumerable.Range(0, Width))
+                {
+                    world[row, col] = random.Next(2) == 1;
+                }
+            }
 
 
             while (true)
